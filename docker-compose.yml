@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  api:
+    build: .
+    ports:
+      - "${PORT:-8000}:8000"
+    volumes:
+      - ./data:/app/data
+      - ./index:/app/index
+      - ./docs/README_assets:/app/docs/README_assets
+    environment:
+      DATA_MODE: ${DATA_MODE:-SYNTH}
+      MODEL_NAME: ${MODEL_NAME:-sentence-transformers/all-MiniLM-L6-v2}
+      CHUNK_SIZE: ${CHUNK_SIZE:-800}
+      CHUNK_OVERLAP: ${CHUNK_OVERLAP:-120}
+      TOP_K: ${TOP_K:-5}
