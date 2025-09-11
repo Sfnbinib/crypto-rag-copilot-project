@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+index/
+data/processed/*
+.DS_Store
+dist/
